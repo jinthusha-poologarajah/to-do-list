@@ -22,7 +22,7 @@ body {
   box-shadow: 0 8px 32px rgba(0,0,0,0.10);
   padding: 36px 32px 28px;
   width: 100%;
-  max-width: 480px;
+  max-width: 520px;
 }
 
 /* ===== HEADER ===== */
@@ -47,12 +47,14 @@ header h1 {
 /* ===== INPUT ROW ===== */
 .input-row {
   display: flex;
-  gap: 10px;
+  gap: 8px;
   margin-bottom: 20px;
+  flex-wrap: wrap;
 }
 
-.input-row input {
+.input-row input[type="text"] {
   flex: 1;
+  min-width: 160px;
   padding: 12px 16px;
   border: 2px solid #e2e8f0;
   border-radius: 10px;
@@ -62,7 +64,23 @@ header h1 {
   transition: border-color 0.2s;
 }
 
-.input-row input:focus {
+.input-row input[type="text"]:focus {
+  border-color: #667eea;
+}
+
+.input-row input[type="date"] {
+  padding: 12px 12px;
+  border: 2px solid #e2e8f0;
+  border-radius: 10px;
+  font-size: 0.88rem;
+  color: #4a5568;
+  outline: none;
+  background: #fff;
+  cursor: pointer;
+  transition: border-color 0.2s;
+}
+
+.input-row input[type="date"]:focus {
   border-color: #667eea;
 }
 
@@ -76,6 +94,7 @@ header h1 {
   font-weight: 600;
   cursor: pointer;
   transition: background 0.2s, transform 0.1s;
+  white-space: nowrap;
 }
 
 #addBtn:hover {
@@ -121,6 +140,7 @@ header h1 {
   opacity: 0.7;
 }
 
+/* Checkbox circle */
 #taskList li .checkbox {
   width: 20px;
   height: 20px;
@@ -140,6 +160,49 @@ header h1 {
   font-size: 0.7rem;
 }
 
+/* Task text + date block */
+.task-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.task-text {
+  font-size: 0.95rem;
+  color: #2d3748;
+}
+
+li.done .task-text {
+  color: #a0aec0;
+}
+
+/* Due date badge */
+.due-date {
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 20px;
+  display: inline-block;
+  width: fit-content;
+}
+
+.due-date.normal {
+  background: #ebf4ff;
+  color: #3182ce;
+}
+
+.due-date.soon {
+  background: #fefcbf;
+  color: #b7791f;
+}
+
+.due-date.overdue {
+  background: #fff5f5;
+  color: #c53030;
+}
+
+/* Delete button */
 #taskList li .delete-btn {
   margin-left: auto;
   background: none;
