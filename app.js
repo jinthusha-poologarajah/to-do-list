@@ -1,4 +1,4 @@
-// --- LOAD TASKS FROM LOCAL STORAGE ON PAGE LOAD ---
+// ===== LOAD TASKS FROM LOCAL STORAGE ON PAGE LOAD =====
 document.addEventListener("DOMContentLoaded", loadTasks);
 
 // Allow pressing Enter to add a task
