@@ -7,7 +7,7 @@
 
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: #f0f4f8;
+  background: #0f0f0f;
   min-height: 100vh;
   display: flex;
   justify-content: center;
@@ -17,12 +17,13 @@ body {
 
 /* ===== CONTAINER ===== */
 .container {
-  background: #ffffff;
+  background: #1a1a1a;
   border-radius: 16px;
-  box-shadow: 0 8px 32px rgba(0,0,0,0.10);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.6);
   padding: 36px 32px 28px;
   width: 100%;
   max-width: 520px;
+  border: 1px solid #2a2a2a;
 }
 
 /* ===== HEADER ===== */
@@ -33,13 +34,13 @@ header {
 
 header h1 {
   font-size: 2rem;
-  color: #1a202c;
+  color: #f0f0f0;
   font-weight: 700;
   letter-spacing: -0.5px;
 }
 
 .subtitle {
-  color: #718096;
+  color: #555;
   font-size: 0.95rem;
   margin-top: 4px;
 }
@@ -56,49 +57,55 @@ header h1 {
   flex: 1;
   min-width: 160px;
   padding: 12px 16px;
-  border: 2px solid #e2e8f0;
+  border: 2px solid #2e2e2e;
   border-radius: 10px;
   font-size: 0.95rem;
-  color: #2d3748;
+  color: #e0e0e0;
+  background: #242424;
   outline: none;
   transition: border-color 0.2s;
 }
 
+.input-row input[type="text"]::placeholder {
+  color: #555;
+}
+
 .input-row input[type="text"]:focus {
-  border-color: #667eea;
+  border-color: #888;
 }
 
 .input-row input[type="date"] {
   padding: 12px 12px;
-  border: 2px solid #e2e8f0;
+  border: 2px solid #2e2e2e;
   border-radius: 10px;
   font-size: 0.88rem;
-  color: #4a5568;
+  color: #aaa;
+  background: #242424;
   outline: none;
-  background: #fff;
   cursor: pointer;
   transition: border-color 0.2s;
+  color-scheme: dark;
 }
 
 .input-row input[type="date"]:focus {
-  border-color: #667eea;
+  border-color: #888;
 }
 
 #addBtn {
   padding: 12px 22px;
-  background: #667eea;
-  color: white;
+  background: #e0e0e0;
+  color: #111;
   border: none;
   border-radius: 10px;
   font-size: 0.95rem;
-  font-weight: 600;
+  font-weight: 700;
   cursor: pointer;
   transition: background 0.2s, transform 0.1s;
   white-space: nowrap;
 }
 
 #addBtn:hover {
-  background: #5a67d8;
+  background: #ffffff;
 }
 
 #addBtn:active {
@@ -119,33 +126,30 @@ header h1 {
   align-items: center;
   gap: 12px;
   padding: 14px 16px;
-  background: #f7fafc;
+  background: #222;
   border-radius: 10px;
-  border: 1px solid #e2e8f0;
+  border: 1px solid #2e2e2e;
   font-size: 0.95rem;
-  color: #2d3748;
+  color: #ddd;
   cursor: pointer;
-  transition: background 0.15s, opacity 0.2s;
+  transition: background 0.15s;
   animation: slideIn 0.2s ease;
 }
 
 #taskList li:hover {
-  background: #edf2f7;
+  background: #2a2a2a;
 }
 
 #taskList li.done {
-  text-decoration: line-through;
-  color: #a0aec0;
-  background: #f0f4f8;
-  opacity: 0.7;
+  opacity: 0.45;
 }
 
-/* Checkbox circle */
+/* Checkbox */
 #taskList li .checkbox {
   width: 20px;
   height: 20px;
   border-radius: 50%;
-  border: 2px solid #cbd5e0;
+  border: 2px solid #444;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -154,13 +158,13 @@ header h1 {
 }
 
 #taskList li.done .checkbox {
-  background: #667eea;
-  border-color: #667eea;
-  color: white;
+  background: #e0e0e0;
+  border-color: #e0e0e0;
+  color: #111;
   font-size: 0.7rem;
 }
 
-/* Task text + date block */
+/* Task body */
 .task-body {
   flex: 1;
   display: flex;
@@ -170,11 +174,12 @@ header h1 {
 
 .task-text {
   font-size: 0.95rem;
-  color: #2d3748;
+  color: #ddd;
 }
 
 li.done .task-text {
-  color: #a0aec0;
+  text-decoration: line-through;
+  color: #555;
 }
 
 /* Due date badge */
@@ -188,18 +193,18 @@ li.done .task-text {
 }
 
 .due-date.normal {
-  background: #ebf4ff;
-  color: #3182ce;
+  background: #1e2a3a;
+  color: #63a4d8;
 }
 
 .due-date.soon {
-  background: #fefcbf;
-  color: #b7791f;
+  background: #2e2510;
+  color: #d4a435;
 }
 
 .due-date.overdue {
-  background: #fff5f5;
-  color: #c53030;
+  background: #2e1212;
+  color: #e05c5c;
 }
 
 /* Delete button */
@@ -207,7 +212,7 @@ li.done .task-text {
   margin-left: auto;
   background: none;
   border: none;
-  color: #cbd5e0;
+  color: #444;
   font-size: 1.1rem;
   cursor: pointer;
   padding: 0 4px;
@@ -216,7 +221,7 @@ li.done .task-text {
 }
 
 #taskList li .delete-btn:hover {
-  color: #fc8181;
+  color: #e05c5c;
 }
 
 /* ===== FOOTER ===== */
@@ -226,18 +231,18 @@ footer {
   align-items: center;
   margin-top: 20px;
   padding-top: 16px;
-  border-top: 1px solid #e2e8f0;
+  border-top: 1px solid #2a2a2a;
 }
 
 #taskCount {
   font-size: 0.85rem;
-  color: #718096;
+  color: #555;
 }
 
 #clearBtn {
   background: none;
-  border: 1px solid #e2e8f0;
-  color: #a0aec0;
+  border: 1px solid #2e2e2e;
+  color: #555;
   padding: 6px 14px;
   border-radius: 8px;
   font-size: 0.82rem;
@@ -246,9 +251,9 @@ footer {
 }
 
 #clearBtn:hover {
-  background: #fed7d7;
-  color: #c53030;
-  border-color: #feb2b2;
+  background: #2e1212;
+  color: #e05c5c;
+  border-color: #5a2020;
 }
 
 /* ===== ANIMATION ===== */
